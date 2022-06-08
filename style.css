@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #121212;
+}
+.bar-body{
+    padding: 20px 30px;
+    width: 500px;
+    height: 170px;
+    background-color: #353434;
+    border-radius: 20px;
+    box-shadow: 0px 0px 1px 3px rgba(255, 255, 255, 0.2);
+}
+.smile-radio{
+    display: none;
+    overflow: hidden;
+    opacity: 0;
+}
+.smile-texts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.smile-title{
+    color: #a3a3a3;
+    min-width: 90px;
+    transition: color 0.4s linear ;
+}
+.smile-dot{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #a3a3a3;
+    cursor: pointer;
+    z-index: 2;
+}
+.smile-body{
+    position: relative;
+    padding: 50px 30px 0;
+}
+.smile-dots{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.smile-dots::before{
+    content:'';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 40px;
+    background-color: #a3a3a3;
+}
+.smile{
+    position: absolute;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: #e7e7e7;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.4s linear,
+    background-color 0.4s linear;
+}
+.smile-eyes{
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.smile-eye{
+    height: 20px;
+    width: 20px;
+    background-color: #484545;
+    border-radius: 20px;
+    transition: background-color 0.4s linear;
+}
+.smile-mouth{
+    position: absolute;
+    top: 30%;
+    width: 40px;
+    height: 40px;
+    border-top: 5px solid #484545;
+    transform: translateY(23px);
+    transition: border 0.2s linear, 
+    transform 0.6s linear, border-radius 0.2s linear;
+}
+#smile-neutral:checked ~ .smile-items .smile{
+    transform: translateX(-50%);
+}
